@@ -3,8 +3,8 @@
 up: clean create_directories frontend backend
 
 create_directories:
-	mkdir -p webapp
-	mkdir -p api
+	sudo mkdir -p webapp
+	sudo mkdir -p api
 
 
 frontend:
@@ -18,5 +18,5 @@ backend:
 	sudo $(MAKE) run-dev
 
 clean:
-	rm -rf webapp
-	rm -rf api
+	sudo rm -rf webapp
+	sudo rm -rf api
