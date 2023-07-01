@@ -1,6 +1,6 @@
 .PHONY: up clean
 
-up: create_directories frontend backend
+up: clean create_directories frontend backend
 
 create_directories:
 	mkdir -p webapp
@@ -18,5 +18,5 @@ backend:
 	sudo $(MAKE) run-dev
 
 clean:
-	cd webapp && $(MAKE) clean
-	cd api && $(MAKE) clean
+	rm -rf webapp
+	rm -rf api
