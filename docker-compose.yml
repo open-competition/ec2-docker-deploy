@@ -1,0 +1,12 @@
+version: '1'
+services:
+  frontend:
+    build: ./webapp
+    ports:
+      - 4000:4000
+    depends_on:
+      - api
+  backend:
+    build: ./api
+    ports:
+      - 3000:3000
