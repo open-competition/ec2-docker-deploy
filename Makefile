@@ -1,6 +1,11 @@
 .PHONY: up clean
 
-up: frontend backend
+up: create_directories frontend backend
+
+create_directories:
+	mkdir -p webapp
+	mkdir -p api
+
 
 frontend:
 	cd webapp && \
