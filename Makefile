@@ -14,5 +14,5 @@ backend:
 	sudo $(MAKE) run-dev
 
 clean:
-	sudo rm -rf open-competition-webapp
-	sudo rm -rf open-competition-service-api
+	sudo rm -rf open-competition-webapp open-competition-service-api webapp api
+	sudo mkdir webapp api
