@@ -9,12 +9,13 @@ create_directories:
 
 frontend:
 	cd webapp && \
-	sudo git clone git@github.com:open-competition/open-competition-webapp.git . && \
+	sudo git clone https://github.com/open-competition/open-competition-webapp.git . && \
+						
 	$(MAKE) run-dev
 
 backend:
 	cd api && \
-	sudo git clone git@github.com:open-competition/open-competition-service-api.git . && \
+	sudo git clone https://github.com/open-competition/open-competition-service-api.git . && \
 	sudo $(MAKE) run-dev
 
 clean:
