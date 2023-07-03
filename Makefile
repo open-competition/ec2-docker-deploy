@@ -4,12 +4,12 @@ up: clean frontend backend
 
 
 frontend:
-	sudo git clone https://github.com/open-competition/open-competition-webapp.git && \
+	sudo git clone https://github.com/open-competition/open-competition-webapp.git open-competition-webapp && \
 	cd open-competition-webapp && \						
 	sudo $(MAKE) run-dev
 
 backend:
-	sudo git clone https://github.com/open-competition/open-competition-service-api.git && \
+	sudo git clone https://github.com/open-competition/open-competition-service-api.git open-competition-service-api && \
 	cd open-competition-service-api && \
 	sudo $(MAKE) run-dev
 
