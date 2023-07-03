@@ -1,16 +1,13 @@
 .PHONY: up clean
 
-up: clean create_directories frontend backend
-
-create_directories:
-	sudo mkdir -p webapp
-	sudo mkdir -p api
+up: clean frontend backend
 
 
 frontend:
+<<<<<<< HEAD
 	cd webapp && \
 	sudo git clone git@github.com:open-competition/open-competition-webapp.git . && \
-	$(MAKE) run-dev
+	sudo $(MAKE) run-dev
 
 backend:
 	cd api && \
@@ -18,5 +15,5 @@ backend:
 	sudo $(MAKE) run-dev
 
 clean:
-	sudo rm -rf webapp
-	sudo rm -rf api
+	sudo rm -rf open-competition-webapp
+	sudo rm -rf open-competition-service-api
