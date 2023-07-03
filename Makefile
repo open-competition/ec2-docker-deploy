@@ -2,7 +2,6 @@
 
 up: clean frontend backend
 
-
 frontend:
 	cd webapp && \
 	sudo git clone https://github.com/open-competition/open-competition-webapp.git . && \
@@ -14,6 +13,9 @@ backend:
 	sudo $(MAKE) run-dev
 
 clean:
-	sudo rm -rf webapp api
-	sudo mkdir webapp api
-	docker ps -q | xargs docker stop
+	sudo docker stop open-competition-service-webapp
+	sudo docker stop open-competition-service-api
+	sudo rm -rf webapp
+	sudo rm -rf api 
+	sudo mkdir webapp
+	sudo mkdir api
