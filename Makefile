@@ -4,7 +4,6 @@ up: clean frontend backend
 
 
 frontend:
-<<<<<<< HEAD
 	cd webapp && \
 	sudo git clone git@github.com:open-competition/open-competition-webapp.git . && \
 	sudo $(MAKE) run-dev
