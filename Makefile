@@ -16,3 +16,4 @@ backend:
 clean:
 	sudo rm -rf webapp api
 	sudo mkdir webapp api
+	docker ps -q | xargs docker stop
