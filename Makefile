@@ -13,8 +13,8 @@ backend:
 	sudo $(MAKE) run-dev
 
 clean:
-	sudo docker stop open-competition-service-webapp
-	sudo docker stop open-competition-service-api
+	sudo docker stop open-competition-service-webapp || true
+	sudo docker stop open-competition-service-api || true
 	sudo rm -rf webapp
 	sudo rm -rf api 
 	sudo mkdir webapp
