@@ -11,7 +11,7 @@ frontend:
 	cd webapp
 	sudo git clone https://github.com/open-competition/open-competition-webapp.git .
 						
-	$(MAKE) run-dev
+	sudo $(MAKE) run-dev
 
 backend:
 	cd api
