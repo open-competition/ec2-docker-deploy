@@ -6,9 +6,9 @@ up_local: clean frontend_local backend_local
 frontend:
 	cd webapp && \
 	sudo git clone https://github.com/open-competition/open-competition-webapp.git . && \
-	cd ../../scripts
-	sudo ./scripts.sh
-	cd ../ec2-docker-deploy/webapp/
+	cd ../../scripts && \
+	sudo ./scripts.sh && \
+	cd ../ec2-docker-deploy/webapp/ && \
 	sudo $(MAKE) run-dev
 
 backend:
