@@ -20,3 +20,9 @@ for dev
 ```
 make run-dev
 ```
+
+
+# notes on ssh custom file path addition and resolve clone issue
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/my_ssh_key
+ssh-add ~/.ssh/local_webapp_key
+git clone -c core.sshCommand='ssh -i ~/.ssh/ec2_webapp_key' git@github.com:open-competition/open-competition-webapp.git .
