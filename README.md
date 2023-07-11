@@ -11,7 +11,8 @@ aws configure
 command line will ask for token, secret and default region.
 
 2. copy the script content to front end folder for env variables
-3. run make command
+3. Generate rsa ssh key for both api, webapp seaprately. Map public key to github ssh key, use private key in git clone command 
+4. run make command
 ```
 make run
 ```
