@@ -1,29 +1,33 @@
-.PHONY: up clean
+.PHONY: up clean up_local
 
 up: clean frontend backend
 up_local: clean frontend_local backend_local
 
 frontend:
 	cd webapp && \
-	sudo git clone https://github.com/open-competition/open-competition-webapp.git . && \
-	cd ../../scripts && \
-	sudo ./scripts.sh && \
+	git clone -c core.sshCommand='ssh -i ~/.ssh/ec2_webapp_key' git@github.com:open-competition/open-competition-webapp.git . && \
+	cd ../../scripts/ && \
+	sudo sh script.sh && \
 	cd ../ec2-docker-deploy/webapp/ && \
 	sudo $(MAKE) run-dev
 
 backend:
 	cd api && \
-	sudo git clone https://github.com/open-competition/open-competition-service-api.git . && \
+	git clone git@github.com:open-competition/open-competition-service-api.git . && \
 	sudo $(MAKE) run-dev
 
 frontend_local:
 	cd webapp && \
-	sudo git clone https://github.com/open-competition/open-competition-webapp.git . && \
+	git clone -c core.sshCommand='ssh -i ~/.ssh/ec2_webapp_key' git@github.com:open-competition/open-competition-webapp.git . && \
+	cd ../../scripts/ && \
+	sudo sh script.sh && \
+	cd ../ec2-docker-deploy/webapp/ && \
 	sudo $(MAKE) run
 
 backend_local:
+	sudo mkdir api && \ 
 	cd api && \
-	sudo git clone https://github.com/open-competition/open-competition-service-api.git . && \
+	git clone git@github.com:open-competition/open-competition-service-api.git . && \
 	sudo $(MAKE) run
 
 clean:
