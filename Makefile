@@ -7,7 +7,7 @@ frontend:
 	cd webapp && \
 	git clone -c core.sshCommand='ssh -i ~/.ssh/ec2_webapp_key' git@github.com:open-competition/open-competition-webapp.git . && \
 	cd ../../scripts/ && \
-	sudo sh script.sh && \
+	sh scripts.sh && \
 	cd ../ec2-docker-deploy/webapp/ && \
 	sudo $(MAKE) run-dev
 
@@ -20,7 +20,7 @@ frontend_local:
 	cd webapp && \
 	git clone -c core.sshCommand='ssh -i ~/.ssh/ec2_webapp_key' git@github.com:open-competition/open-competition-webapp.git . && \
 	cd ../../scripts/ && \
-	sudo sh script.sh && \
+	sh scripts.sh && \
 	cd ../ec2-docker-deploy/webapp/ && \
 	sudo $(MAKE) run
 
@@ -31,5 +31,5 @@ backend_local:
 	sudo $(MAKE) run
 
 clean:
-	sudo rm -rf webapp api
-	sudo mkdir webapp api
+	rm -rf webapp api
+	mkdir webapp api
